@@ -1,0 +1,27 @@
+<h1>Lista de Apólices</h1>
+
+@if (loading) {
+<div class="loading-state">
+    <span class="loader"></span>
+    <p>Carregando apolices...</p>
+</div>
+} @else if (error) {
+<div class="error-state">
+    <p>Ocorreu um erro ao carregar as apólices.</p>
+    <button class="btn-retry" (click)="loadPolicies()">Tentar novamente</button>
+</div>
+} @else {
+<sgc-table [data]="policies" [columns]="columns">
+
+    <!-- Template para células de data -->
+    <ng-template sgcTableCell="dateCell" let-row let-column="column">
+        {{row[column.field] | date:'dd/MM/yyyy' }}
+    </ng-template>
+
+    <!-- Template para ações -->
+    <ng-template #actions let-row>
+        <sgc-button label="Incluir item" [loading]="actionLoading[row.id]"
+            (action)="handleIncludeItem(row)"></sgc-button>
+    </ng-template>
+</sgc-table>
+}

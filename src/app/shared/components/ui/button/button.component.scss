@@ -1,0 +1,72 @@
+@import 'assets/styles/abstracts/variables';
+@import 'assets/styles/abstracts/mixins';
+
+.action-button {
+  @include button-reset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $border-radius;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  transition: all 0.2s ease;
+  min-width: 100px;
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  &.loading {
+    cursor: wait;
+  }
+  
+  .spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  &-primary {
+    background-color: $color-primary;
+    color: $color-white;
+    
+    &:hover:not(:disabled) {
+      background-color: $color-primary-dark;
+    }
+  }
+  
+  &-secondary {
+    background-color: transparent;
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    
+    &:hover:not(:disabled) {
+      background-color: rgba($color-primary, 0.1);
+    }
+    
+    .spinner {
+      border-color: rgba($color-primary, 0.3);
+      border-top-color: $color-primary;
+    }
+  }
+  
+  &-danger {
+    background-color: #dc3545;
+    color: $color-white;
+    
+    &:hover:not(:disabled) {
+      background-color: darken(#dc3545, 10%);
+    }
+  }
+}
+

@@ -1,0 +1,7 @@
+@for (toast of activeToasts; track toast.id) {
+<div class="toast toast-{{ toast.type }}" [@toastAnimation]="toast.state" (click)="removeToast(toast.id)">
+    <div class="toast-content">
+        <span class="toast-message">{{ toast.message }}</span>
+    </div>
+</div>
+}

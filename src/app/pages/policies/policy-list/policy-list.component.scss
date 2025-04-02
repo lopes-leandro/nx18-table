@@ -1,0 +1,70 @@
+@import 'assets/styles/abstracts/variables';
+@import 'assets/styles/abstracts/mixins';
+
+:host {
+  padding: $spacing-md;
+  
+  @include responsive(md) {
+    padding: $spacing-lg;
+  }
+  
+  h1 {
+    margin-bottom: $spacing-lg;
+    color: $color-primary;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    
+    @include responsive(md) {
+      font-size: 1.5rem;
+      margin-bottom: $spacing-xl;
+    }
+  }
+  
+  .loading-state, .error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-xl 0;
+    
+    p {
+      margin-top: $spacing-md;
+      color: lighten($color-text, 20%);
+    }
+  }
+  
+  .loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid $color-gray;
+    border-bottom-color: $color-primary;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .btn-retry {
+    @include button-reset;
+    margin-top: $spacing-md;
+    padding: $spacing-sm $spacing-md;
+    background-color: $color-primary;
+    color: $color-white;
+    border-radius: $border-radius;
+    font-weight: $font-weight-bold;
+    
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+  }
+}
+

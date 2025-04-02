@@ -1,0 +1,40 @@
+<table>
+    <thead>
+        <tr>
+            @for (column of columns; track $index) {
+            <th [style.width]="column.width">{{column.header}}</th>
+            }
+            @if (actionsTemplate) {
+            <th class="actions-column"></th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @for (row of data; track $index) {
+        <tr>
+            @for (column of columns; track $index) {
+            <td>
+                @if (getCellTemplate(column)) {
+                <ng-container [ngTemplateOutlet]="getCellTemplate(column)"
+                    [ngTemplateOutletContext]="{$implicit: row, column: column }"></ng-container>
+                } @else {
+                {{getCellValue(row, column)}}
+                }
+            </td>
+            }
+            @if (actionsTemplate) {
+            <td class="actions-cell">
+                <ng-container [ngTemplateOutlet]="actionsTemplate"
+                    [ngTemplateOutletContext]="{$implicit: row}"></ng-container>
+            </td>
+            }
+        </tr>
+        } @empty {
+        <tr>
+            <td [attr.colspan]="actionsTemplate ? columns.length + 1 : columns.length" class="empty-state">
+                Nenhum registro encontrado.
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
