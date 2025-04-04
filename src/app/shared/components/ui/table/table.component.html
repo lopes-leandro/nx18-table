@@ -1,13 +1,4 @@
-<!-- @if (title || titleTemplate) {
-    <div class="table-title">
-        @if (titleTemplate) {
-            <ng-container [ngTemplateOutlet]="titleTemplate"></ng-container>
-        } @else {
-            {{title}}
-        }
-    </div>
-} -->
-<table class="table-style-insurance">
+<table>
     <thead>
         @if (titleTemplate) {
         <ng-container [ngTemplateOutlet]="titleTemplate"></ng-container>
@@ -17,7 +8,7 @@
             <th [style.width]="column.width" [class]="getCellClass(column)">{{column.header}}</th>
             }
             @if (actionsTemplate) {
-            <th class="actions-column"></th>
+            <th></th>
             }
         </tr>
     </thead>
@@ -35,7 +26,7 @@
             </td>
             }
             @if (actionsTemplate) {
-            <td class="actions-cell">
+            <td class="center">
                 <ng-container [ngTemplateOutlet]="actionsTemplate"
                     [ngTemplateOutletContext]="{$implicit: row}"></ng-container>
             </td>

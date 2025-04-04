@@ -1,13 +1,13 @@
 import { DatePipe } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { PolicyModel, PolicyService } from '@domain/policies';
-import { ButtonComponent, TableCellDirective, TableColumn, TableComponent, ToastService } from '@shared/components/ui';
+import { ButtonComponent, TableCellDirective, TableColumn, TableComponent, TableStyleDirective, ToastService } from '@shared/components/ui';
 import { catchError, finalize, of, tap } from 'rxjs';
 
 @Component({
   selector: 'sgc-policy-list',
   standalone: true,
-  imports: [TableComponent, TableCellDirective, DatePipe, ButtonComponent],
+  imports: [TableComponent, TableCellDirective, TableStyleDirective, DatePipe, ButtonComponent],
   templateUrl: './policy-list.component.html',
   styleUrl: './policy-list.component.scss'
 })
@@ -23,19 +23,23 @@ export class PolicyListComponent implements OnInit {
     {
       field: 'policyNumber',
       header: 'Apólice mãe',
+      align: 'left'
     },
     {
       field: 'holderName',
       header: 'Nome do estipulante',
+      align: 'left'
     },
     {
       field: 'startDate',
       header: 'Inicio da vigência',
+      align: 'left',
       cellTemplate: 'dateCell'
     },
     {
       field: 'endDate',
       header: 'Fim da vigência',
+      align: 'left',
       cellTemplate: 'dateCell'
     },
   ]

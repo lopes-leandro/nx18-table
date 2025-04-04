@@ -19,7 +19,8 @@ export class InsuranceListComponent implements OnInit {
   insurancePrices: SimulatePriceModel[] = [];
   insuranceStyle: TableStyleType = "insurance";
   insuranceColumns: TableColumn<SimulatePriceModel>[] = [];
-  readonly insuranceTitle = 'Casa habitural de alvenaria';
+  readonly insuranceTitle = 'Casa habitual de alvenaria';
+  readonly insuranceTitleApartment = 'Apartamento habitual';
   private insurancePriceService = inject(SimulateQuotesService);
 
   ngOnInit(): void {

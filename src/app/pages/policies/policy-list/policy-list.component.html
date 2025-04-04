@@ -11,17 +11,19 @@
     <button class="btn-retry" (click)="loadPolicies()">Tentar novamente</button>
 </div>
 } @else {
-<sgc-table [data]="policies" [columns]="columns">
+<section>
+    <sgc-table [sgcTableStyle]="'default'" [data]="policies" [columns]="columns">
 
-    <!-- Template para células de data -->
-    <ng-template sgcTableCell="dateCell" let-row let-column="column">
-        {{row[column.field] | date:'dd/MM/yyyy' }}
-    </ng-template>
+        <!-- Template para células de data -->
+        <ng-template sgcTableCell="dateCell" let-row let-column="column">
+            {{row[column.field] | date:'dd/MM/yyyy' }}
+        </ng-template>
 
-    <!-- Template para ações -->
-    <ng-template #actions let-row>
-        <sgc-button label="Incluir item" [loading]="actionLoading[row.id]"
-            (action)="handleIncludeItem(row)"></sgc-button>
-    </ng-template>
-</sgc-table>
+        <!-- Template para ações -->
+        <ng-template #actions let-row>
+            <sgc-button label="Incluir item" [loading]="actionLoading[row.id]"
+                (action)="handleIncludeItem(row)"></sgc-button>
+        </ng-template>
+    </sgc-table>
+</section>
 }

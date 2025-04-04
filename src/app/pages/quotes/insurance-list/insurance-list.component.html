@@ -15,3 +15,18 @@
         </ng-template>
     </sgc-table>
 </section>
+<section>
+    <sgc-table [sgcTableStyle]="insuranceStyle" [data]="insurancePrices" [columns]="insuranceColumns">
+        <ng-template sgcTableCell="currencyCell" let-item let-column="column">
+            {{item[column.field] | currency:'BRL':'symbol':'1.2-2' }}
+        </ng-template>
+
+        <!-- Template para ações -->
+        <ng-template #title>
+            <tr>
+                <th></th>
+                <th colspan="3">{{insuranceTitleApartment}}</th>
+            </tr>
+        </ng-template>
+    </sgc-table>
+</section>
