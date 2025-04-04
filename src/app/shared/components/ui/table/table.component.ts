@@ -13,10 +13,13 @@ import { NgTemplateOutlet } from '@angular/common';
 export class TableComponent<T> {
   @Input() data: T[] = [];
   @Input() columns: TableColumn<T>[] = [];
+  // @Input() title?: string; // Adiciona suporte para título
+
   @ContentChildren(TableCellDirective) cellTemplates!: QueryList<TableCellDirective>;
   @ContentChild("actions") actionsTemplate?: TemplateRef<any>;
+  @ContentChild("title") titleTemplate?: TemplateRef<any>;
 
-  getCellTemplate(column: TableColumn<T>): TemplateRef<any> | null{
+  getCellTemplate(column: TableColumn<T>): TemplateRef<any> | null {
     if (!column.cellTemplate) return null;
 
     const directive = this.cellTemplates.find((d) => d.sgcTableCell === column.cellTemplate);
@@ -26,5 +29,13 @@ export class TableComponent<T> {
   getCellValue(item: T, column: TableColumn<T>): any {
     const field = column.field as string;
     return field.split('.').reduce((obj, key) => obj && obj[key], item as any);
+  }
+
+  getCellClass(column: TableColumn<T>): string {
+    const classes = [];
+    if (column.align) {
+      classes.push(`text-${column.align}`);
+    }
+    return classes.join(' ');
   }
 }

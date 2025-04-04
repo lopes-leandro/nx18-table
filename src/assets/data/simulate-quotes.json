@@ -1,0 +1,30 @@
+[
+    {
+      "id": "1",
+      "region": "Sul",
+      "premium_rate": 100,
+      "iof_tax": 10,
+      "total_premium_rate": 110
+    },
+    {
+      "id": "2",
+      "region": "Norte/Nordeste",
+      "premium_rate": 100,
+      "iof_tax": 10,
+      "total_premium_rate": 110
+    },
+    {
+      "id": "3",
+      "region": "Minas Gerais/GO",
+      "premium_rate": 100,
+      "iof_tax": 10,
+      "total_premium_rate": 110
+    },
+    {
+      "id": "4",
+      "region": "Rio de Janeiro/Espírito Santo/São Paulo",
+      "premium_rate": 100,
+      "iof_tax": 10,
+      "total_premium_rate": 110
+    }
+  ]

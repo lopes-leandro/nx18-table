@@ -7,4 +7,5 @@ export * from './toast/toast.service';
 
 export * from './table/table.component';
 export * from './table/table-cell.directive';
+export * from './table/table-style.directive';
 export * from './table/table-column.model';

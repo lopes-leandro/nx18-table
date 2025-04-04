@@ -1,0 +1,27 @@
+@import 'assets/styles/abstracts/variables';
+@import 'assets/styles/abstracts/mixins';
+
+:host {
+    padding: $spacing-md;
+
+    @include responsive(md) {
+        padding: $spacing-lg;
+    }
+}
+
+h1 {
+    margin-bottom: $spacing-lg;
+    color: $color-primary;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+
+    @include responsive(md) {
+        font-size: 1.5rem;
+        margin-bottom: $spacing-xl;
+    }
+}
+
+section {
+    margin-bottom: $spacing-xl;
+    padding: $spacing-sm;
+}

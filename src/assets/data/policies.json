@@ -1,0 +1,44 @@
+[
+    {
+      "id": "1",
+      "policy_number": "AP1234567890R",
+      "holder_name": "Nome e Sobrenome do Estipulante",
+      "start_date": "2024-01-01",
+      "end_date": "2026-01-01"
+    },
+    {
+      "id": "2",
+      "policy_number": "AP9876543218R",
+      "holder_name": "Nome e Sobrenome do Estipulante",
+      "start_date": "2024-01-01",
+      "end_date": "2026-01-01"
+    },
+    {
+      "id": "3",
+      "policy_number": "AP2468135798R",
+      "holder_name": "Nome e Sobrenome do Estipulante",
+      "start_date": "2024-01-01",
+      "end_date": "2026-01-01"
+    },
+    {
+      "id": "4",
+      "policy_number": "AP1357924680R",
+      "holder_name": "Nome e Sobrenome do Estipulante",
+      "start_date": "2024-01-01",
+      "end_date": "2026-01-01"
+    },
+    {
+      "id": "5",
+      "policy_number": "AP1415926530R",
+      "holder_name": "Nome e Sobrenome do Estipulante",
+      "start_date": "2024-01-01",
+      "end_date": "2026-01-01"
+    },
+    {
+      "id": "6",
+      "policy_number": "AP1029384750R",
+      "holder_name": "Nome e Sobrenome do Estipulante",
+      "start_date": "2024-01-01",
+      "end_date": "2026-01-01"
+    }
+  ]

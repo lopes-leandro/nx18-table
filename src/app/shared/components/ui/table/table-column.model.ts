@@ -4,4 +4,5 @@ export interface TableColumn<T> {
     width?: string;
     sortable?: boolean;
     cellTemplate?: string;
+    align?: 'left' | 'center' | 'right'; //suporte ao alinhamento de texto.
 }
