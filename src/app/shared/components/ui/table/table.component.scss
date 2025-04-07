@@ -27,7 +27,7 @@ table.default {
   tbody {
     td {
       border: none;
-      border-bottom: $border-width solid $color-gray-light;
+      border-bottom: $border-width solid $color-gray;
       padding: 16px;
     }
   }
@@ -53,13 +53,13 @@ table.insurance {
   tbody {
     tr {
       &:last-child {
-        border-bottom: 2px solid #414141;
+        border-bottom: $border-width-200 solid $color-support-gray-100;
       }
     }
 
     td {
       padding: 16px;
-      border-bottom: $border-width solid $color-gray-light;
+      border-bottom: $border-width solid $color-gray;
 
       &:first-child {
         border-right: 2px solid $color-gray;
